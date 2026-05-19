@@ -12,7 +12,7 @@ import {
   Menu, ShieldCheck, Loader2,
 } from "lucide-react";
 
-export const Route = createFileRoute("/_app")({ component: AppLayout });
+export const Route = createFileRoute("/app")({ component: AppLayout });
 
 type NavItem = { to: string; label: string; icon: typeof Car; exact?: boolean };
 const NAV: NavItem[] = [
