@@ -14,7 +14,8 @@ import {
 
 export const Route = createFileRoute("/_app")({ component: AppLayout });
 
-const NAV = [
+type NavItem = { to: string; label: string; icon: typeof Car; exact?: boolean };
+const NAV: NavItem[] = [
   { to: "/app", label: "Dashboard", icon: LayoutDashboard, exact: true },
   { to: "/app/vehicles", label: "Vehicles", icon: Car },
   { to: "/app/bookings", label: "Bookings", icon: CalendarRange },
@@ -22,7 +23,7 @@ const NAV = [
   { to: "/app/returns", label: "Returns", icon: RotateCcw },
   { to: "/app/history", label: "History", icon: HistoryIcon },
   { to: "/app/profile", label: "Profile", icon: User },
-] as const;
+];
 
 function AppLayout() {
   const { user, loading, role, signOut } = useAuth();
